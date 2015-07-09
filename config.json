@@ -1,28 +1,28 @@
 [
   {
-    "uploads_list_id": "UU...",
+    "uploads_list_id": "UU_x5XG1OV2P6uZZ5FSM9Ttw",
     "actions": [
       {
-        "regex": "search term 1",
-        "playlist_id": "PL..."
+        "regex": "lazyweb",
+        "playlist_id": "PLNYkxOF6rcIAphRfFANEdt5WTb87aZZDk"
       },
       {
-        "regex": "search term 2",
-        "bulletin": "Check out this video!"
-      }
-    ]
-  },
-  {
-    "uploads_list_id": "UU...",
-    "actions": [
-      {
-        "regex": "search term 1",
-        "playlist_id": "PL..."
+        "regex": "new in chrome",
+        "playlist_id": "PLNYkxOF6rcIDfz8XEA3loxY32tYh7CI3m"
       },
       {
-        "regex": "search term 2",
-        "bulletin": "Check out this video!"
+        "regex": "polycasts",
+        "playlist_id": "PLNYkxOF6rcIDdS7HWIC_BYRunV6MHs5xo"
+      },
+      {
+        "regex": "totally tooling",
+        "playlist_id": "PLNYkxOF6rcIB3ci6nwNyLYNU6RDOU3YyL"
+      },
+      {
+        "regex": "http 203",
+        "playlist_id": "PLNYkxOF6rcIAKIQFsNbV0JDws_G_bnNo9"
       }
-    ]
+    ],
+    "last_updated": 1436322443
   }
 ]

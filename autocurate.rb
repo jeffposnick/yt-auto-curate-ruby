@@ -1,5 +1,5 @@
-#!/usr/bin/ruby
-#  Copyright 2011 Google Inc. All Rights Reserved.
+#!/usr/bin/env ruby
+#  Copyright 2015 Google Inc. All Rights Reserved.
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
 #  you may not use this file except in compliance with the License.
@@ -17,7 +17,7 @@ require 'rubygems'
 require 'google/api_client'
 require 'json'
 require 'logger'
-require 'oauth/oauth_util'
+require './oauth/oauth_util'
 require 'thread'
 require 'trollop'
 
@@ -36,7 +36,7 @@ Log = Logger.new(STDOUT)
 
 def initialize_log(debug)
   Log.formatter = proc do |severity, time, progname, msg|
-    return "#{time} [#{severity}]: #{msg}\n"
+    "#{time} [#{severity}]: #{msg}\n"
   end
 
   Log.level = debug ? Logger::DEBUG : Logger::INFO
@@ -108,14 +108,14 @@ def process_video_ids(client, youtube, videos, actions)
 
   begin
     actions.each do |action|
-      regex = Regexp.new(action[REGEX_KEY])
+      regex = Regexp.new(action[REGEX_KEY], true)
       videos.each do |video|
         if regex =~ video.snippet.title
           if action.has_key?(PLAYLIST_ID_KEY)
             add_video_to_playlist(client, youtube, action[PLAYLIST_ID_KEY], video.snippet.resourceId.videoId)
           end
 
-          if action.has_key?(BULLETIN_KEY):
+          if action.has_key?(BULLETIN_KEY)
             post_bulletin(client, youtube, action[BULLETIN_KEY], video.snippet.resourceId.videoId)
           end
 
